@@ -17,11 +17,11 @@ class JobSearchParameters(BaseModel):
 
 class CompanyInformation(BaseModel):
     name: str
-    description: str
-    website: str
+    description: str = "AI/Technology company"
+    website: str = "https://example.com"
     linkedin_url: Optional[str] = None
-    industry: str
-    employee_count: str  # "51-200 employees"
+    industry: str = "Technology"
+    employee_count: str = "Unknown"  # "51-200 employees"
     tech_focus: List[str] = []  # e.g., ["AI", "Cloud Computing"]
     company_rating: Optional[float] = None  # From review platforms
     hiring_trends: List[str] = []  # e.g., ["Growing", "Stable"]
