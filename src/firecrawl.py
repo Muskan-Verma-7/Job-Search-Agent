@@ -1,7 +1,8 @@
 import os
 from firecrawl import FirecrawlApp, ScrapeOptions
 from dotenv import load_dotenv
-
+from typing import List, Dict, Optional
+from .models import JobSearchParameters  
 load_dotenv()
 
 
