@@ -25,8 +25,8 @@ class JobSearchPrompts:
     
     # 2. Skill Extractor
     SKILL_EXTRACTION_SYSTEM = """
-    Extract technical skills from job descriptions with European context. Focus on:
-    - AI/ML specific skills (LLMs, TensorFlow, etc.)
+    Extract technical skills from job descriptions with global context. Focus on:
+    - AI/ML specific skills (LLMs, Generative AI, Prompt Engineering, etc.)
     - Programming languages
     - Cloud platforms (AWS, GCP, Azure)
     - EU-specific tools (GDPR-compliant systems)

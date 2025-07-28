@@ -52,10 +52,12 @@ class FirecrawlService:
             except Exception as e:
                 print(f"Error searching {platform}: {str(e)}")
         
-        # If no results found, return mock data for testing
+        # If no results found, return an empty list or handle as needed
         if not all_results:
-            print("No results found from API, using mock data for testing...")
-            all_results = self._get_mock_jobs(params)
+            print("No results found from API.")
+            # Optionally: raise an error, return [], or handle as you wish
+            # For example:
+            # raise RuntimeError("No job results found from API.")
         
         return all_results
 
@@ -130,73 +132,4 @@ class FirecrawlService:
         
         return query
 
-    def _get_mock_jobs(self, params: JobSearchParameters) -> List[Dict]:
-        """Return mock job data for testing when API fails"""
-        mock_jobs = [
-            {
-                "id": "linkedin_1",
-                "title": "Senior AI Engineer",
-                "company": "TechCorp Berlin",
-                "location": "Berlin, Germany",
-                "type": "Full-time",
-                "salary": "€80,000 - €120,000",
-                "level": "Senior",
-                "postedDate": "2024-01-15",
-                "markdown": "We are looking for a Senior AI Engineer to join our team in Berlin. Experience with Python, TensorFlow, and machine learning required. Visa sponsorship available for qualified candidates.",
-                "url": "https://example.com/job1",
-                "platform": "LinkedIn"
-            },
-            {
-                "id": "stepstone_1", 
-                "title": "Machine Learning Specialist",
-                "company": "AI Startup Amsterdam",
-                "location": "Amsterdam, Netherlands",
-                "type": "Full-time",
-                "salary": "€70,000 - €100,000",
-                "level": "Mid",
-                "postedDate": "2024-01-14",
-                "markdown": "Join our AI startup in Amsterdam. We need ML specialists with experience in NLP and computer vision. Remote work possible.",
-                "url": "https://example.com/job2",
-                "platform": "StepStone"
-            },
-            {
-                "id": "linkedin_2",
-                "title": "Data Scientist - AI Focus",
-                "company": "European Tech Hub",
-                "location": "Paris, France",
-                "type": "Full-time",
-                "salary": "€75,000 - €110,000",
-                "level": "Mid",
-                "postedDate": "2024-01-13",
-                "markdown": "Join our data science team in Paris. Focus on AI and machine learning projects. Experience with PyTorch and cloud platforms required.",
-                "url": "https://example.com/job3",
-                "platform": "LinkedIn"
-            },
-            {
-                "id": "stepstone_2",
-                "title": "AI Research Engineer",
-                "company": "Nordic AI Lab",
-                "location": "Stockholm, Sweden",
-                "type": "Full-time",
-                "salary": "€85,000 - €130,000",
-                "level": "Senior",
-                "postedDate": "2024-01-12",
-                "markdown": "Research engineer position in Stockholm. Work on cutting-edge AI research. PhD preferred. Visa sponsorship available.",
-                "url": "https://example.com/job4",
-                "platform": "StepStone"
-            },
-            {
-                "id": "linkedin_3",
-                "title": "MLOps Engineer",
-                "company": "Cloud AI Solutions",
-                "location": "Remote, Europe",
-                "type": "Full-time",
-                "salary": "€90,000 - €140,000",
-                "level": "Senior",
-                "postedDate": "2024-01-11",
-                "markdown": "MLOps engineer for cloud-based AI solutions. Experience with AWS, Kubernetes, and ML pipelines required. Fully remote position.",
-                "url": "https://example.com/job5",
-                "platform": "LinkedIn"
-            }
-        ]
-        return mock_jobs
+    
