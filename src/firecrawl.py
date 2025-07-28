@@ -28,9 +28,7 @@ class FirecrawlService:
                 result = self.app.search(
                     query=query,
                     limit=5,  # Results per platform
-                    scrape_options=ScrapeOptions(
-                        formats=["markdown"]
-                    )
+                    scrape_options={"formats": ["markdown"]}
                 )
                 
                 # Fix: Access SearchResponse fields properly
@@ -68,9 +66,7 @@ class FirecrawlService:
         try:
             result = self.app.scrape_url(
                 url,
-                scrape_options=ScrapeOptions(
-                    formats=["markdown"]
-                )
+                scrape_options={"formats": ["markdown"]}
             )
             
             # Fix: Handle SearchResponse object properly
