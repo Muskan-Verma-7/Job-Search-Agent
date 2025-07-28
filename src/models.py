@@ -32,7 +32,6 @@ class JobListing(BaseModel):
     company: CompanyInformation  # Embedded company info
     location: str
     job_type: str
-    salary_range: Optional[str] = None
     experience_level: str
     posted_date: datetime
     application_deadline: Optional[datetime] = None

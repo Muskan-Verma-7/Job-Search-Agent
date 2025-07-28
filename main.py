@@ -54,20 +54,14 @@ def collect_parameters() -> JobSearchParameters:
     locations = locations.split(",") if locations else ["Europe"]
     experience = experience.split(",") if experience else ["Mid", "Senior"]
     skills = skills.split(",") if skills else ["Python", "TensorFlow"]
-    salary_range = (int(min_salary), None) if min_salary else None
     
-    # Normalize input
-    keywords = [kw.strip() for kw in keywords]
-    locations = [loc.strip() for loc in locations]
-    experience = [exp.strip().capitalize() for exp in experience]
-    skills = [skill.strip() for skill in skills]
+    # Remove all salary_range related code, including parameter, print statements, and logic
     
     return JobSearchParameters(
         keywords=keywords,
         locations=locations,
         experience_level=experience,
         required_skills=skills,
-        salary_range=salary_range,
         visa_sponsorship=visa_needed
     )
 
@@ -92,12 +86,6 @@ def display_results(state):
         print("\n" + "-" * 60)
         print(f"{i}. 🚀 {job.title}")
         print(f"   🏢 {job.company.name} | 📍 {job.location}")
-        
-        # Salary display
-        if job.salary_range:
-            print(f"   💰 {job.salary_range}")
-        elif state.parameters.salary_range:
-            print(f"   💰 Salary: Not specified (You wanted €{state.parameters.salary_range[0]}+)")
         
         # Experience and type
         print(f"   🎯 {job.experience_level} | 🕒 {job.job_type}")

@@ -176,7 +176,6 @@ class JobSearchPrompts:
         Candidate Requirements:
         - Skills: {params['required_skills']}
         - Visa Needed: {params['visa_sponsorship']}
-        - Min Salary: {params['salary_range'][0] if params['salary_range'] else 'N/A'} EUR
         
         Job Details:
         {job}

@@ -74,7 +74,6 @@ class JobSearchWorkflow:
                     company=CompanyInformation(name=raw.get("company", "Unknown Company")),
                     location=raw.get("location", ""),
                     job_type=raw.get("type", "Full-time"),
-                    salary_range=raw.get("salary", ""),
                     experience_level=self._map_experience(raw.get("level", "")),
                     posted_date=self._parse_date(raw.get("postedDate", "")),
                     description=raw.get("markdown", "")[:2000],  # Truncate
